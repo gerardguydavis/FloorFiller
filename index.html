@@ -27,6 +27,10 @@
  <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
 </head>
 <body>
+  <video playsinline autoplay muted loop id="bgvid">
+  <source src="vid/starsbg.mp4" type="video/mp4">
+  <source src="vid/starsbg.webm" type="video/webm">
+  </video>
   <div class="main-content-wrapper">
     <header>
       <section class="head"></section>
@@ -49,7 +53,7 @@
     <main>
     <section class="songlist">
       <div class="content-wrapper">
-	    <a href="www.google.com" style="z-index: 9;">
+	    <a style="z-index: 20;" id="topsong">
         <article class="song">
           <figure class="jacket">
             <img src="img/stv.png" alt="Birth In Reverse by St. Vincent">
@@ -63,7 +67,7 @@
           </div>
         </article>
         </a>
-        <a href="www.google.com" style="z-index: 8;">
+        <a style="z-index: 19;" id="topsong">
         <article class="song">
           <figure class="jacket">
             <img src="img/pis.png" alt="Birth In Reverse by St. Vincent">
@@ -77,7 +81,7 @@
           </div>
         </article>
         </a>
-        <a href="www.google.com" style="z-index: 7;">
+        <a style="z-index: 18;">
         <article class="song">
           <figure class="jacket">
             <img src="img/dial.png" alt="Birth In Reverse by St. Vincent">
@@ -91,7 +95,7 @@
           </div>
         </article>
         </a>
-        <a href="www.google.com" style="z-index: 6;">
+        <a style="z-index: 17;">
         <article class="song">
           <figure class="jacket">
             <img src="img/eyes.png" alt="Birth In Reverse by St. Vincent">
@@ -105,7 +109,7 @@
           </div>
         </article>
         </a>
-        <a href="www.google.com" style="z-index: 5;">
+        <a style="z-index: 16;">
         <article class="song">
           <figure class="jacket">
             <img src="img/lady.png" alt="Birth In Reverse by St. Vincent">
@@ -120,7 +124,7 @@
           </div>
         </article>
         </a>
-        <a href="www.google.com" style="z-index: 4;">
+        <a style="z-index: 15;">
         <article class="song">
           <figure class="jacket">
             <img src="img/dance.png" alt="Birth In Reverse by St. Vincent">
@@ -135,7 +139,7 @@
           </div>
         </article>
         </a>
-        <a href="www.google.com" style="z-index: 3;">
+        <a style="z-index: 14;">
         <article class="song">
           <figure class="jacket">
             <img src="img/seven.png" alt="Birth In Reverse by St. Vincent">
@@ -149,7 +153,7 @@
           </div>
         </article>
         </a>
-        <a href="www.google.com" style="z-index: 2;">
+        <a style="z-index: 13;">
         <article class="song">
           <figure class="jacket">
             <img src="img/shelter.png" alt="Birth In Reverse by St. Vincent">
@@ -163,7 +167,7 @@
           </div>
         </article>
         </a>
-        <a href="www.google.com" style="z-index: 1;">
+        <a style="z-index: 12;">
         <article class="song">
           <figure class="jacket">
             <img src="img/heart.png" alt="Birth In Reverse by St. Vincent">
@@ -178,7 +182,7 @@
           </div>
         </article>
         </a>
-        <a href="www.google.com" style="z-index: 0;">
+        <a style="z-index: 11">
         <article class="song">
           <figure class="jacket">
             <img src="img/updown.png" alt="Birth In Reverse by St. Vincent">
@@ -187,6 +191,35 @@
             <p class="genre">Electro &nbsp//&nbsp 135 BPM</p>
             <p class="song-title">Up & Down</p>
             <p class="song-artist"><span>Timmy Trumpet <span style="text-transform: lowercase">x</span> Vengaboys</span></p>
+          </div>
+          <div class="difficulties">
+          </div>
+        </article>
+        </a>
+        <a style="z-index: 10">
+        <article class="song">
+          <figure class="jacket">
+            <img src="img/slave.png" alt="Birth In Reverse by St. Vincent">
+          </figure>
+          <div class="song-info">
+            <p class="genre">Dirty Pop &nbsp//&nbsp 110 BPM</p>
+            <p class="song-title">I'm A Slave 4 U</p>
+            <p class="song-artist">Britney Spears</p>
+          </div>
+          <div class="difficulties">
+          </div>
+        </article>
+        </a>
+        <a style="z-index: 9;">
+        <article class="song">
+          <figure class="jacket">
+            <img src="img/lover.png" alt="Birth In Reverse by St. Vincent">
+          </figure>
+          <div class="song-info">
+            <p class="genre">R&B Remix &nbsp//&nbsp 128 BPM</p>
+            <p class="song-title" id="hassub">Someone To Call My Lover</p>
+            <p class="subtitle" style="font-size:14px">(Hex Hector/Mac Quayle Club Mix)</p>
+            <p class="song-artist" id="subabove">Janet Jackson</p>
           </div>
           <div class="difficulties">
           </div>
