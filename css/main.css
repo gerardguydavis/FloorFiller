@@ -1,0 +1,182 @@
+.main-content-wrapper {
+  background-image: url("../img/starsbg.gif");
+  background-attachment: fixed;
+}
+
+header {
+  background-color:rgba(90,30,200);
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.nav {
+  justify-content: center;
+  font-family: "Electrolize";
+  font-size: 1.7rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  display: flex;
+}
+
+.navmenu {
+display: flex;
+justify-content: center;
+}
+
+.nav ul {
+  list-style-type: none;
+  display: inline-flex;
+  justify-content: center;
+  margin: 12px 0;
+}
+
+.nav a {
+  padding: 10px 0;
+  margin: 0px 30px 0;
+  border: 4px solid #b008d1;
+  background-color: #b008d1;
+  transition: .1s;
+  width: 250px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navmenu a {
+  color: #fff;
+}
+
+.nav a:hover {
+  text-decoration: none;
+  color:#b008d1;
+  background-color: #fff;
+  border: 4px solid #b008d1;
+  transition: .1s;
+}
+
+
+/********SONGS*******/
+
+.songlist {
+  border-top: solid 2px #fff;
+  padding-top: 90px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.songlist a {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: rgba(90, 60, 150, 50%);
+  text-decoration: none;
+  transition: .2s;
+  justify-content: center;
+  align-items: center;
+  margin: -12px 7px;
+  transform: skewX(-20deg);
+}
+
+.songlist .content-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  flex-basis: 70%;
+}
+
+.song {
+  display: flex;
+  flex-flow: row wrap;
+  width: 550px;
+  justify-content: center;
+}
+
+.song-info {
+  font-family: "Electrolize";
+  text-transform: uppercase;
+  padding: 20px 0 0 10px;
+  display: flex;
+  flex-flow: row wrap;
+  color: #fff;
+  flex-basis: 50%;
+  align-self: flex-start;
+  line-height: 0;
+}
+
+.songlist a:hover {
+  text-decoration: none;
+  transition: .2s;
+  background-color: rgba(176, 8, 209, .95);
+  transform: skewX(0deg);
+  margin: 20px 0;
+  z-index: 9;
+}
+
+.songlist a:hover .song{
+  transition: .2s;
+}
+
+.songlist a:hover .song-info {
+  color: #fff;
+}
+
+
+.genre,
+.song-title,
+.subtitle,
+.song-artist,
+.difficulties {
+  flex-basis: 100%;
+}
+
+.genre,
+.song-title,
+.song-artist,
+.difficulties {
+  font-weight: bolder;
+}
+
+.song-title,
+.song-artist {
+  font-size: 1.5em;
+  line-height: 1;
+  margin: 10px 0;
+}
+
+.song-artist span {
+  line-height: 1;
+}
+
+.song-title {
+  padding-bottom: 3px;
+  border-bottom: solid 1px #fff;
+}
+
+#hassub {
+  border-bottom: none;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  padding-bottom: 11px;
+  border-bottom: solid 1px #fff;
+  margin: 0 0 10px;
+}
+
+.song-artist {
+  margin-top: -4px;
+}
+
+.sub-artist {
+  margin: -2px 0 0;
+}
+
+.jacket {
+  flex-basis: 30%;
+  margin: 15px;
+}
+
+.jacket img {
+  width: 100%;
+  border-radius: 4px;
+}
