@@ -17,15 +17,18 @@ header {
 .nav {
   justify-content: center;
   font-family: "Electrolize";
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   font-weight: bolder;
   text-transform: uppercase;
   display: flex;
+  justify-content: flex-end;
+  width: 95%;
 }
 
 .navmenu {
 display: flex;
-justify-content: center;
+justify-content: flex-end;
+flex-basis: 80%;
 }
 
 .nav ul {
@@ -33,20 +36,22 @@ justify-content: center;
   display: inline-flex;
   justify-content: center;
   margin: 12px 0;
+  transform: skewX(-30deg);
+}
+
+.nav li {
+  transform: skewX(30deg);
 }
 
 .nav a {
   padding: 10px 0;
-  margin: 0px 30px 0;
-  border: 4px solid #b008d1;
+  margin: 0px 0px 0;
+  border: 6px solid #fff;
   background-color: #b008d1;
   transition: .1s;
   width: 250px;
   text-align: center;
   text-decoration: none;
-}
-
-.navmenu a {
   color: #fff;
 }
 
@@ -54,7 +59,11 @@ justify-content: center;
   text-decoration: none;
   color:#b008d1;
   background-color: #fff;
-  border: 4px solid #b008d1;
+  transition: .1s;
+}
+
+.nav a:active {
+  background-color: #d9dfff;
   transition: .1s;
 }
 
@@ -71,14 +80,16 @@ justify-content: center;
 .songlist a {
   display: flex;
   flex-flow: row wrap;
-  background-color: rgba(90, 60, 150, 50%);
+  background-color: rgba(50, 30, 130, .4);
   text-decoration: none;
   transition: .2s;
   justify-content: center;
   align-items: center;
-  margin: -18px 7px;
+  margin: -20px 7px;
   transform: skewX(-20deg) skewY(7deg);
   max-height: 195px;
+  border: solid 3px #fff;
+  border-radius: 3px;
   box-shadow: 5px 5px 9px rgba(50, 50, 50, .3)
 }
 
@@ -116,10 +127,13 @@ justify-content: center;
   text-decoration: none;
   transition: .2s;
   background-color: rgb(176, 8, 209);
-  transform: skewX(0deg) scale(1.065);
+  transform: skewX(0deg) scale(1.25);
   margin: 20px 9px;
-  z-index: 40;
-  box-shadow: 4px 4px 0px rgba(30, 180, 230, 1);
+  z-index: 100;
+}
+
+.songlist a:hover .song {
+  z-index: 100;
 }
 
 #topsong:hover {
@@ -127,8 +141,8 @@ justify-content: center;
 }
 
 .songlist a:active {
-  transform:translate(4px, 4px) scale(1.065);
-  box-shadow: 1px 1px 0px rgba(30, 180, 230, .9);
+  transform:translate(4px, 4px) scale(1.23);
+  box-shadow: 1px 1px 0px rgba(50, 50, 50, .3);
 }
 
 .genre,
