@@ -58,24 +58,24 @@ header {
 .nav a {
   padding: 10px 0;
   margin: 0px 0px 0;
-  border: 6px solid #fff;
+  border: 6px solid #f5f2f7;
   background-color: #b008d1;
   transition: .1s;
   width: 250px;
   text-align: center;
   text-decoration: none;
-  color: #fff;
+  color: #f5f2f7;
 }
 
 .nav a:hover {
   text-decoration: none;
   color:#b008d1;
-  background-color: #fff;
+  background-color: #f5f2f7;
   transition: .1s;
 }
 
 .nav a:active {
-  background-color: #d9dfff;
+  background-color: #d9df5f2f7;
   transition: .1s;
 }
 
@@ -88,7 +88,7 @@ header {
 
 .welcome {
 font-family: "Electrolize";
-color: #fff;
+color: #f5f2f7;
 height: 100%;
 display: flex;
 justify-content: center;
@@ -99,7 +99,7 @@ flex-flow: row wrap;
 
 .welcome-content-wrapper {
 font-family: "Electrolize";
-color: #fff;
+color: #f5f2f7;
 height: 100%;
 display: flex;
 justify-content: center;
@@ -141,10 +141,12 @@ flex-flow: row wrap;
 /********SONGS*******/
 
 .songlist {
-  border-top: solid 2px #fff;
+  border-top: solid 2px #f5f2f7;
   padding: 140px 0 50px;
-  display: flex;
+  display: none;
   justify-content: center;
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
 }
 
 .songlist a {
@@ -157,10 +159,10 @@ flex-flow: row wrap;
   margin: -20px 7px;
   transform: skewX(-20deg) skewY(7deg);
   max-height: 195px;
-  border: solid 3px #fff;
+  border: solid 3px #f5f2f7;
   border-radius: 3px;
   background-color: rgba(50, 30, 130, .4);
-  box-shadow: 5px 5px 9px rgba(50, 50, 50, .3)
+  box-shadow: 5px 5px 9px rgba(50, 50, 50, .3);
 }
 
 .boss-song {
@@ -191,7 +193,7 @@ flex-flow: row wrap;
   padding: 0 0 10px 10px;
   display: flex;
   flex-flow: row wrap;
-  color: #fff;
+  color: #f5f2f7;
   flex-basis: 50%;
   align-self: center;
   line-height: 0;
@@ -202,7 +204,6 @@ flex-flow: row wrap;
   transition: .2s;
   transform: skewX(0deg) scale(1.25);
   margin: 20px 9px;
-  z-index: 100;
 }
 
 .boss-song .song-info {
@@ -214,7 +215,8 @@ flex-flow: row wrap;
 }
 
 .normal-song:hover {
-  background-color: rgb(176, 8, 209);
+  background: rgb(176,8,209);
+  background: linear-gradient(60deg, rgba(176,8,209,1) 39%, rgba(112,5,180,.93) 88%);
 }
 
 .songlist a:hover .beginner,
@@ -258,7 +260,7 @@ flex-flow: row wrap;
 
 .song-title {
   padding-bottom: 2px;
-  border-bottom: solid 1px #fff;
+  border-bottom: solid 1px #f5f2f7;
 }
 
 .boss-song .song-title {
@@ -276,7 +278,7 @@ margin-bottom: 4px;
 
 .subtitle {
   padding-bottom: 11px;
-  border-bottom: solid 1px #fff;
+  border-bottom: solid 1px #f5f2f7;
   margin: 0 0 10px;
 }
 
