@@ -286,3 +286,7 @@ margin-bottom: 4px;
 .oni {
   color: darkorchid;
 }
+
+.hide {
+  display: none;
+}
