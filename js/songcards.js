@@ -1,3 +1,9 @@
+const homeButton = document.querySelector("#home");
+const songsButton = document.querySelector("#songs");
+const coursesButton = document.querySelector("#courses");
+const welcome = document.querySelector(".welcome");
+const songlist = document.querySelector(".songlist");
+const courses = document.querySelector(".courses")
 const songCards = []
 
 let collection = document.getElementsByClassName("normal-song");
@@ -25,3 +31,27 @@ function stopSample(soundobj) {
     thisSound.pause();
     thisSound.currentTime = 0;
 }
+
+homeButton.addEventListener("click", function() {
+    if (welcome.classList.contains("hide")) {
+        songlist.classList.add("hide");
+        courses.classList.add("hide");
+        welcome.classList.remove("hide");
+    } 
+});
+
+songsButton.addEventListener("click", function() {
+    if(songlist.classList.contains("hide")) {
+        welcome.classList.add("hide");
+        courses.classList.add("hide");
+        songlist.classList.remove("hide");
+    }
+})
+
+coursesButton.addEventListener("click", function() {
+    if(courses.classList.contains("hide")){
+        welcome.classList.add("hide");
+        songlist.classList.add("hide");
+        courses.classList.remove("hide");
+    }
+})
