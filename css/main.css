@@ -10,6 +10,7 @@ video {
 header {
   background-color:rgba(90,30,200);
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 100;
   box-shadow: 0px 2px 3px rgba(60,60,60,.4);
@@ -81,6 +82,54 @@ header {
 .nav a:active li {
   transform: translate(3px, 2px) scale(.97) skewX(30deg);
   transition: .1s;
+}
+
+/*****HOME*****/
+
+.welcome {
+font-family: "Electrolize";
+color: #fff;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+align-self: center;
+flex-flow: row wrap;
+}
+
+.welcome-content-wrapper {
+font-family: "Electrolize";
+color: #fff;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+align-self: center;
+flex-flow: row wrap;
+}
+
+.welcome h1 {
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  text-transform: uppercase;
+  display: flex;
+  align-self: center;
+  flex-flow: row wrap;
+  width: 100%;
+  margin: 200px 0 20px;
+  font-size: 3em;
+  letter-spacing: 10px;
+  text-shadow: 2px 2px 3px #666;
+}
+
+.trailer figure {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 100%;
+  margin: 0;
 }
 
 

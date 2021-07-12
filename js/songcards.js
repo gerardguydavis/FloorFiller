@@ -14,3 +14,14 @@ for (const card of collection) {
         }
     })
 }
+
+function playSample(soundobj) {
+    let thisSound=document.getElementById(soundobj);
+    thisSound.play();
+}
+
+function stopSample(soundobj) {
+    const thisSound=document.getElementById(soundobj);
+    thisSound.pause();
+    thisSound.currentTime = 0;
+}
