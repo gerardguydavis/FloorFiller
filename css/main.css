@@ -132,6 +132,11 @@ flex-flow: row wrap;
   margin: 0;
 }
 
+.trailer iframe {
+  border: solid 5px #b008d1;
+  border-radius: 10px;
+}
+
 
 /********SONGS*******/
 
