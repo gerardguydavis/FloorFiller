@@ -115,7 +115,7 @@ header {
 
 .songlist .content-wrapper {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: wrap;
   justify-content: center;
   flex-basis: 95%;
 }
