@@ -146,8 +146,6 @@ flex-flow: row wrap;
   padding: 140px 0 50px;
   display: flex;
   justify-content: center;
-  -webkit-transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
 }
 
 .songlist a {
@@ -346,5 +344,4 @@ margin-bottom: 4px;
 
 .hide {
   display: none;
-  transition: .2s;
 }
