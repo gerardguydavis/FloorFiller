@@ -261,21 +261,25 @@ width: 800px;
 .songlist a:hover .light{
   background-color: #cc9710;
   color: #f5f2f7;
+  border: solid 2px #f5f2f7;
 }
 
 .songlist a:hover .standard {
   background-color: #bd09bd;
-  color: #fff
+  color: #f5f2f7;
+  border: solid 2px #f5f2f7;
 }
 
 .songlist a:hover .heavy {
   background-color: #1aab1a;
   color: #f5f2f7;
+  border: solid 2px #f5f2f7;
 }
 
 .songlist a:hover .oni {
   background-color: #7d1fab;
   color: #f5f2f7;
+  border: solid 2px #f5f2f7;
 }
 
 .songlist a:active {
