@@ -45,6 +45,7 @@ songsButton.addEventListener("click", function() {
         welcome.classList.add("hide");
         courses.classList.add("hide");
         songlist.classList.remove("hide");
+        
     }
 })
 

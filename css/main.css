@@ -178,12 +178,60 @@ width: 800px;
   border-radius: 10px;
 }
 
+/*****SONG NAV*****/
+
+.songpack-buttons {
+  list-style-type: none;
+  display: inline-flex;
+  margin: 3px 0;
+  transform: skewX(-30deg);
+  align-items: center;
+  flex-basis: 100%;
+  flex-flow: row wrap;
+  font-family: "Electrolize";
+  margin: 0 0 75px;
+}
+
+.songpack-buttons li {
+  transform: skewX(30deg);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 10px 0;
+  margin: 0px 0px 0;
+  border: 6px solid #f5f2f7;
+  background-color: #b008d1;
+  transition: .1s;
+  width: 250px;
+  text-align: center;
+  text-decoration: none;
+  color: #f5f2f7;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+
+.songpack-buttons li:hover {
+  text-decoration: none;
+  color:#b008d1;
+  background-color: #f5f2f7;
+  transition: .1s;
+  cursor: pointer;
+}
+
+.songpack-buttons li:active {
+  background-color: #d9dfff;
+  transition: .1s;
+  color:#b008d1;
+}
 
 /********SONGS*******/
 
 .songlist {
   border-top: solid 2px #f5f2f7;
-  padding: 140px 0 50px;
+  padding: 100px 0 50px;
   display: flex;
   justify-content: center;
 }
@@ -370,12 +418,12 @@ margin-bottom: 7px;
   display: inline-flex;
   flex-basis: 100%;
   font-weight: bolder;
-  justify-content: flex-start;
+  text-align: center;
 }
 
 .difficulties p {
   width: 50px;
-  text-align: center;
+  justify-content: center;
 }
 
 .light,
@@ -390,7 +438,7 @@ margin-bottom: 7px;
 }
 
 .level-name {
-  font-size: .75rem;
+  font-size: .7rem;
   border-bottom: solid 1px #f5f2f7;
   padding: 8px 0;
   margin: 0;
