@@ -193,28 +193,6 @@ width: 800px;
   flex-basis: 95%;
 }
 
-::-webkit-scrollbar {
-  width: 2px;
-}
-
-::-webkit-scrollbar-track {
-  border-radius: 5px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #8717bf;
-  border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #563269;
-  border-radius: 5px;
-}
-
-  
-
 .song {
   display: flex;
   flex-flow: row wrap;
