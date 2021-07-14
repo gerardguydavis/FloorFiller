@@ -180,40 +180,63 @@ width: 800px;
 
 /*****SONG NAV*****/
 
+.songpack-nav {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: center;
+}
 .songpack-buttons {
   list-style-type: none;
   display: inline-flex;
   margin: 3px 0;
   transform: skewX(-30deg);
   align-items: center;
-  flex-basis: 100%;
   flex-flow: row wrap;
   font-family: "Electrolize";
   margin: 0 0 75px;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
 }
 
 .songpack-buttons li {
+  padding: 10px 0;
+  margin: 0px 0px 0;
+  border: 6px solid #f5f2f7;
+  width: 175px;
   transform: skewX(30deg);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  padding: 10px 0;
-  margin: 0px 0px 0;
-  border: 6px solid #f5f2f7;
-  background-color: #b008d1;
-  transition: .1s;
-  width: 250px;
-  text-align: center;
-  text-decoration: none;
+}
+
+.unavailable {
+  background-color: grey;
   color: #f5f2f7;
-  text-transform: uppercase;
-  font-size: 1.25em;
-  font-weight: bold;
+}
+
+.unavailable:hover {
+  background-color: grey;
+  color: #f5f2f7;
+  cursor: default;
+}
+
+.unavailable:active {
+  background-color: grey;
+  color: #f5f2f7;
+}
+
+.available-pack {
+  background-color: #b008d1;
+  color: #f5f2f7;
+  transition: .1s;
 }
 
 
-.songpack-buttons li:hover {
+.available-pack:hover {
   text-decoration: none;
   color:#b008d1;
   background-color: #f5f2f7;
@@ -221,7 +244,7 @@ width: 800px;
   cursor: pointer;
 }
 
-.songpack-buttons li:active {
+.available-pack:active {
   background-color: #d9dfff;
   transition: .1s;
   color:#b008d1;
