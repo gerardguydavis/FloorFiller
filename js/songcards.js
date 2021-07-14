@@ -71,7 +71,7 @@ const showSongs = function (songData) {
     });
     card.addEventListener("mouseout", function() {
         i = 99;
-        for (const card of songData) {
+        for (song of songsData) {
             card.style.zIndex=i--;
         }
     });
