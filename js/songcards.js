@@ -7,7 +7,7 @@ const songlist = document.querySelector(".songlist");
 const songlistWrapper = document.querySelector(".songlist .content-wrapper")
 const courses = document.querySelector(".courses")
 const getSongs = async function () {
-    const res = await fetch ("https://gist.githubusercontent.com/gerardguydavis/3469c29b9bbb3017bd2c873f21434009/raw/3440f4120a565bb8938df9284a140361cde8704c/songlist.json");
+    const res = await fetch ("https://gist.githubusercontent.com/gerardguydavis/3469c29b9bbb3017bd2c873f21434009/raw/389c00c5b2301e5626ed27ae7c5eecf46c9970c6/songlist.json");
     const songData = await res.json();
     for (let song of songData) {
         songsData.push(song);
@@ -16,27 +16,6 @@ const getSongs = async function () {
 }
 const songsData = []
 console.log(songsData);
-
-/*const createSong = function () {
-    const createCard = document.createElement("a");
-    createCard.setAttribute("onmouseenter", `playSample('${song.songId}')`);
-    createCard.setAttribute("onmouseleave", `stopSample('${song.songId}')`);
-    createCard.className = "normal-song";
-    const createSongArticle = document.createElement("article");
-    createSongArticle.className = "song";
-    const createJacket = document.createElement("figure");
-    createJacket.className = "jacket";
-    const createSongInfo = document.createElement("div");
-    createSongInfo.className = "song-info";
-    const createGenre = document.createElement("p");
-    createGenre.className = "genre";
-    const createSongTitle = document.createElement("p");
-    createSongTitle.className = "song-title";
-    const createSongArtist = document.createElement("p");
-    createSongArtist.className = "song-artist";
-    const createDifficulties = document.createElement("div");
-    createDifficulties.className = "difficulties";
-}*/
 
 getSongs();
 
@@ -50,7 +29,9 @@ const showSongs = function (songData) {
     const songInfo = document.createElement("div");
     const genre = document.createElement("p");
     const songTitle = document.createElement("p");
+    const songSubTitle = document.createElement("p");
     const songArtist = document.createElement("p");
+    const songSubArtist = document.createElement("p");
     const difficulties = document.createElement("div");
 
     songWrap.className = "content-wrapper";
@@ -60,16 +41,18 @@ const showSongs = function (songData) {
     songInfo.className = "song-info";
     genre.className = "genre";
     songTitle.className = "song-title";
+    songSubTitle.className = "subtitle";
     songArtist.className = "song-artist";
+    songSubArtist.className = "sub-artist";
     difficulties.className = "difficulties";
 
-    card.setAttribute("onmouseenter", `playSample('${song.songId}')`);
-    card.setAttribute("onmouseleave", `stopSample('${song.songId}')`);
     card.style.zIndex=i--;
     card.addEventListener("mouseover", function () {
         card.style.zIndex=100;
+        playSample(`${song.songId}`)
     });
     card.addEventListener("mouseout", function() {
+        stopSample(`${song.songId}`)
         i = 99;
         for (song of songsData) {
             card.style.zIndex=i--;
@@ -80,7 +63,9 @@ const showSongs = function (songData) {
     jacket.innerHTML = `<img ${song.jacket}>`;
     genre.innerText = `${song.genre}`;
     songTitle.innerText = `${song.songTitle}`;
+    songSubTitle.innerText = `${song.subTitle}`;
     songArtist.innerText = `${song.songArtist}`;
+    songSubArtist.innerText = `${song.subArtist}`;
     difficulties.innerHTML = `<div class="light">
     <p class="level-name">Fresh</p>
     <p class="level-rank">${song.fresh}</p>
@@ -98,29 +83,28 @@ const showSongs = function (songData) {
     <p class="level-rank">${song.frenzy}</p>
   </div>`
 
-    songInfo.append(genre, songTitle, songArtist, difficulties);
+    if (song.subTitle === 0) {
+        if (song.subArtist === 0) {
+        songInfo.append(genre, songTitle, songArtist, difficulties);
+        } else if (song.subArtist !== 0) {
+        songInfo.append(genre, songTitle, songArtist, songSubArtist, difficulties)
+        }
+    }
+    else if (song.subTitle !== 0) {
+        songTitle.classList.add("hassub");
+        songArtist.classList.add("subabove");
+        if (song.subArtist === 0) {
+        songInfo.append(genre, songTitle, songSubTitle, songArtist, difficulties);
+        } else if (song.subArtist !== 0) {
+        songInfo.append(genre, songTitle, songSubTitle, songArtist, songSubArtist, difficulties);
+        }
+    }
     songArticle.append(jacket, songInfo);
     card.append(songArticle);
     songWrap.append(card);
     songlist.append(songWrap);
 }
 }
-
-const songCards = [];
-//let collection = document.getElementsByClassName("normal-song");
-/*let i = 99;
-for (const card of collection) {
-    card.style.zIndex=i--;
-    card.addEventListener("mouseover", function () {
-        card.style.zIndex=100;
-    });
-    card.addEventListener("mouseout", function() {
-        i = 99;
-        for (const card of collection) {
-            card.style.zIndex=i--;
-        }
-    })
-}*/
 
 function playSample(soundobj) {
     let thisSound=document.getElementById(soundobj);
