@@ -46,19 +46,6 @@ const showSongs = function (songsData) {
     songSubArtist.className = "sub-artist";
     difficulties.className = "difficulties";
 
-    /*function playSample(song) {
-        let thisSound=this.sample;
-        thisSound.play(this.sample);
-    }
-
-    function stopSample(song) {
-        const thisSound=this.sample;
-        thisSound.pause(this.sample);
-        thisSound.currentTime = 0;
-    }*/
-
-    /*card.setAttribute("onmouseenter", "`playSample('${songSample}')");
-    card.setAttribute("onmouseleave", "`stopSample('${songSample}')`");*/
     card.style.zIndex=i--;
     card.addEventListener("mouseover", function () {
         card.style.zIndex=100;
@@ -148,17 +135,6 @@ const showSongs = function (songsData) {
     songlist.append(songWrap);
 }
 }
-
-function playSample(soundobj) {
-    let thisSound=document.getElementById(soundobj);
-    thisSound.play();
-}
-
-/*function stopSample(soundobj) {
-    const thisSound=document.getElementById(soundobj);
-    thisSound.pause();
-    thisSound.currentTime = 0;
-}*/
 
 homeButton.addEventListener("click", function() {
     if (welcome.classList.contains("hide")) {
