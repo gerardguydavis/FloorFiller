@@ -7,19 +7,18 @@ const songlist = document.querySelector(".songlist");
 const songlistWrapper = document.querySelector(".songlist .content-wrapper")
 const courses = document.querySelector(".courses")
 const getSongs = async function () {
-    const res = await fetch ("https://gist.githubusercontent.com/gerardguydavis/3469c29b9bbb3017bd2c873f21434009/raw/389c00c5b2301e5626ed27ae7c5eecf46c9970c6/songlist.json");
+    const res = await fetch ("https://gist.githubusercontent.com/gerardguydavis/3469c29b9bbb3017bd2c873f21434009/raw/3e1a8c8df66252ff2a47ba6b308882c55fdd1bee/songlist.json");
     const songData = await res.json();
     for (let song of songData) {
         songsData.push(song);
     }
     showSongs(songData);
 }
-const songsData = []
-console.log(songsData);
+const songsData = [];
 
 getSongs();
 
-const showSongs = function (songData) {
+const showSongs = function (songsData) {
     for (let song of songsData) {
     let i = 99;
     const songWrap = document.createElement("div")
@@ -33,6 +32,7 @@ const showSongs = function (songData) {
     const songArtist = document.createElement("p");
     const songSubArtist = document.createElement("p");
     const difficulties = document.createElement("div");
+    const songSample = document.getElementById(`${song.sampleId}`)
 
     songWrap.className = "content-wrapper";
     card.className = "normal-song";
@@ -46,17 +46,31 @@ const showSongs = function (songData) {
     songSubArtist.className = "sub-artist";
     difficulties.className = "difficulties";
 
+    /*function playSample(song) {
+        let thisSound=this.sample;
+        thisSound.play(this.sample);
+    }
+
+    function stopSample(song) {
+        const thisSound=this.sample;
+        thisSound.pause(this.sample);
+        thisSound.currentTime = 0;
+    }*/
+
+    /*card.setAttribute("onmouseenter", "`playSample('${songSample}')");
+    card.setAttribute("onmouseleave", "`stopSample('${songSample}')`");*/
     card.style.zIndex=i--;
     card.addEventListener("mouseover", function () {
         card.style.zIndex=100;
-        playSample(`${song.songId}`)
+        songSample.play;
     });
     card.addEventListener("mouseout", function() {
-        stopSample(`${song.songId}`)
         i = 99;
         for (song of songsData) {
             card.style.zIndex=i--;
         }
+        songSample.pause;
+        songSample.currentTime = 0;
     });
 
     card.classList.add = `song-pack-${song.songPack}`
@@ -83,6 +97,34 @@ const showSongs = function (songData) {
     <p class="level-rank">${song.frenzy}</p>
   </div>`
 
+   let songTitleTest = song.songTitle;
+   let songSubTitleTest = song.subTitle;
+   let songArtistTest = song.songArtist;
+   let songTitleCount = songTitleTest.toString().split("");
+   let songSubTitleCount = songSubTitleTest.toString().split("");
+   let songArtistCount = songArtistTest.toString().split("");
+   let titleLength = songTitleCount.length;
+   let subLength = songSubTitleCount.length;
+   let artistLength = songArtistCount.length;
+
+   if (titleLength > 22) {
+       genre.classList.add("long-title");
+   }
+
+   if (subLength > 20) {
+       songSubTitle.classList.add("long-subTitle");
+   }
+
+   if (artistLength > 22) {
+       genre.classList.add("long-title");
+   }
+
+   if (songSubTitle.classList.contains("long-subTitle")) {
+    if (genre.classList.contains("long-title")) {
+        songTitle.classList.add("wordy");
+    }
+}
+
     if (song.subTitle === 0) {
         if (song.subArtist === 0) {
         songInfo.append(genre, songTitle, songArtist, difficulties);
@@ -99,6 +141,7 @@ const showSongs = function (songData) {
         songInfo.append(genre, songTitle, songSubTitle, songArtist, songSubArtist, difficulties);
         }
     }
+
     songArticle.append(jacket, songInfo);
     card.append(songArticle);
     songWrap.append(card);
@@ -111,11 +154,11 @@ function playSample(soundobj) {
     thisSound.play();
 }
 
-function stopSample(soundobj) {
+/*function stopSample(soundobj) {
     const thisSound=document.getElementById(soundobj);
     thisSound.pause();
     thisSound.currentTime = 0;
-}
+}*/
 
 homeButton.addEventListener("click", function() {
     if (welcome.classList.contains("hide")) {

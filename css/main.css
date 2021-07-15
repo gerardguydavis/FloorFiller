@@ -413,6 +413,14 @@ width: 800px;
 margin-bottom: 7px;
 }
 
+.long-subTitle {
+  font-size: .85em;
+}
+
+.wordy {
+  font-size: 1.15em;
+}
+
 .subtitle {
   padding-bottom: 11px;
   border-bottom: solid 1px #f5f2f7;
