@@ -1,27 +1,25 @@
-document.addEventListener("DOMContentLoaded", function(e){
+
 const homeButton = document.querySelector("#home");
 const songsButton = document.querySelector("#songs");
 const coursesButton = document.querySelector("#courses");
 const welcome = document.querySelector(".welcome");
 const songlist = document.querySelector(".songlist");
-const songlistWrapper = document.querySelector(".songlist .content-wrapper")
 const courses = document.querySelector(".courses")
 const getSongs = async function () {
-    const res = await fetch ("https://gist.githubusercontent.com/gerardguydavis/3469c29b9bbb3017bd2c873f21434009/raw/3e1a8c8df66252ff2a47ba6b308882c55fdd1bee/songlist.json");
+    const res = await fetch ("https://gist.githubusercontent.com/gerardguydavis/3469c29b9bbb3017bd2c873f21434009/raw/32cdcf24b63cfb410d50d0964c94f32e1d5ecb68/songlist.json");
     const songData = await res.json();
     for (let song of songData) {
         songsData.push(song);
     }
     showSongs(songData);
 }
+
+
 const songsData = [];
 
 getSongs();
-
 const showSongs = function (songsData) {
     for (let song of songsData) {
-    let i = 99;
-    const songWrap = document.createElement("div")
     const card = document.createElement("a");
     const songArticle = document.createElement("article");
     const jacket = document.createElement("figure");
@@ -34,7 +32,6 @@ const showSongs = function (songsData) {
     const difficulties = document.createElement("div");
     const songSample = document.getElementById(`${song.sampleId}`)
 
-    songWrap.className = "content-wrapper";
     card.className = "normal-song";
     songArticle.className = "song";
     jacket.className = "jacket";
@@ -45,20 +42,6 @@ const showSongs = function (songsData) {
     songArtist.className = "song-artist";
     songSubArtist.className = "sub-artist";
     difficulties.className = "difficulties";
-
-    card.style.zIndex=i--;
-    card.addEventListener("mouseover", function () {
-        card.style.zIndex=100;
-        songSample.play;
-    });
-    card.addEventListener("mouseout", function() {
-        i = 99;
-        for (song of songsData) {
-            card.style.zIndex=i--;
-        }
-        songSample.pause;
-        songSample.currentTime = 0;
-    });
 
     card.classList.add = `song-pack-${song.songPack}`
     jacket.innerHTML = `<img ${song.jacket}>`;
@@ -83,6 +66,9 @@ const showSongs = function (songsData) {
     <p class="level-name">Frenzy</p>
     <p class="level-rank">${song.frenzy}</p>
   </div>`
+  
+
+  //To determine text length and reduce size when necessary
 
    let songTitleTest = song.songTitle;
    let songSubTitleTest = song.subTitle;
@@ -129,10 +115,12 @@ const showSongs = function (songsData) {
         }
     }
 
+
+//To create song cards and populate div
+
     songArticle.append(jacket, songInfo);
     card.append(songArticle);
-    songWrap.append(card);
-    songlist.append(songWrap);
+    songlist.append(card);
 }
 }
 
@@ -160,4 +148,3 @@ coursesButton.addEventListener("click", function() {
         courses.classList.remove("hide");
     }
 })
-});

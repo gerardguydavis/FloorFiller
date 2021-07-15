@@ -254,9 +254,11 @@ width: 800px;
 
 .songlist {
   border-top: solid 2px #f5f2f7;
-  padding: 100px 0 50px;
+  padding: 150px 0 50px;
   display: flex;
   justify-content: center;
+  flex-flow: row wrap;
+  flex-basis: 95%;
 }
 
 .songlist a {
@@ -277,13 +279,6 @@ width: 800px;
 
 .boss-song {
   background-color: rgba(60,60,60,.4);
-}
-
-.songlist .content-wrapper {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: center;
-  flex-basis: 95%;
 }
 
 .song {
@@ -450,6 +445,7 @@ margin-bottom: 7px;
   flex-basis: 100%;
   font-weight: bolder;
   text-align: center;
+  justify-content: left;
 }
 
 .difficulties p {
@@ -461,7 +457,8 @@ margin-bottom: 7px;
 .standard,
 .heavy,
 .oni {
-  margin: 5px;
+  margin: 5px 0;
+  margin-right: 10px;
   background-color: rgba(30,30,30,.7);
   border: solid 1px #f5f2f7;
   display: flex;
