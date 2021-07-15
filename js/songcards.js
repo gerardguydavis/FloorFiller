@@ -6,7 +6,7 @@ const welcome = document.querySelector(".welcome");
 const songlist = document.querySelector(".songlist");
 const courses = document.querySelector(".courses")
 const getSongs = async function () {
-    const res = await fetch ("https://gist.githubusercontent.com/gerardguydavis/3469c29b9bbb3017bd2c873f21434009/raw/32cdcf24b63cfb410d50d0964c94f32e1d5ecb68/songlist.json");
+    const res = await fetch ("https://gist.githubusercontent.com/gerardguydavis/3469c29b9bbb3017bd2c873f21434009/raw/58f1ffb5f261eccb779ebfc660b728090a19d1af/songlist.json");
     const songData = await res.json();
     for (let song of songData) {
         songsData.push(song);
@@ -44,6 +44,8 @@ const showSongs = function (songsData) {
     difficulties.className = "difficulties";
 
     card.classList.add = `song-pack-${song.songPack}`
+    card.setAttribute("target", "_blank");
+    card.setAttribute("href", `${song.url}`)
     jacket.innerHTML = `<img ${song.jacket}>`;
     genre.innerText = `${song.genre}`;
     songTitle.innerText = `${song.songTitle}`;
@@ -122,7 +124,23 @@ const showSongs = function (songsData) {
     card.append(songArticle);
     songlist.append(card);
 }
+let collection = document.getElementsByClassName(".normal-song")
+let i = 99;
+for (const card of collection) {
+    card.style.zIndex=i--;
+    card.addEventListener("mouseover", function () {
+        card.style.zIndex=100;
+    });
+    card.addEventListener("mouseout", function() {
+        i = 99;
+        for (const card of collection) {
+            card.style.zIndex=i--;
+        }
+    })
 }
+}
+
+
 
 homeButton.addEventListener("click", function() {
     if (welcome.classList.contains("hide")) {
